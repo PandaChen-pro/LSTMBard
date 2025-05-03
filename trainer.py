@@ -111,9 +111,10 @@ class PoemTrainer:
                         "epoch": epoch
                     })
             
+            os.mkdir(os.path.join(save_path, 'model'), exist_ok=True)
             # 定期保存模型
             if (epoch + 1) % save_interval == 0:
-                self.save_model(os.path.join(save_path, f'model_epoch_{epoch+1}.pth'))
+                self.save_model(os.path.join(save_path, f'model_epoch_{epoch+1}_loss_{val_loss}.pth'))
         
         # 保存最终模型
         self.save_model(os.path.join(save_path, 'final_model.pth'))

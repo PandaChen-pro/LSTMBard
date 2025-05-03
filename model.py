@@ -1,6 +1,8 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
+from dataset_loader import prepare_input
+import numpy as np
 
 class PoemLSTM(nn.Module):
     def __init__(self, vocab_size, embedding_dim, hidden_dim, num_layers, dropout=0.5, pad_idx=8292):
