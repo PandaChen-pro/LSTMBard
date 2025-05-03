@@ -20,7 +20,7 @@ class PoemTrainer:
         self.optimizer = optim.Adam(model.parameters(), lr=learning_rate)
         
     def train(self, epochs, word2ix, ix2word, save_path='checkpoints',
-             log_interval=10, save_interval=1, use_wandb=True):
+             log_interval=10, save_interval=10, use_wandb=True):
         """训练模型"""
         if use_wandb:
             wandb.init(project="lstm-poem-generator", config={
@@ -113,6 +113,7 @@ class PoemTrainer:
             
             # os.mkdir(os.path.join(save_path, 'model'), exist_ok=True)
             # 定期保存模型
+            # 每隔10个epoch保存一次
             if (epoch + 1) % save_interval == 0:
                 self.save_model(os.path.join(save_path, f'model_epoch_{epoch+1}_loss_{val_loss}.pth'))
         

@@ -20,3 +20,10 @@ config: {'learning_rate': 0.001, 'epochs': 50, 'model_type': 'PoemLSTM', 'embedd
 2025-05-03 10:04:11,436 INFO    MainThread:4323 [wandb_run.py:_redirect():2483] Wrapping output streams.
 2025-05-03 10:04:11,436 INFO    MainThread:4323 [wandb_run.py:_redirect():2506] Redirects installed.
 2025-05-03 10:04:11,438 INFO    MainThread:4323 [wandb_init.py:init():1147] run started, returning control to user process
+2025-05-03 11:04:04,903 INFO    MainThread:4323 [wandb_run.py:_finish():2314] finishing run laccoliths/lstm-poem-generator/c1s5v9jl
+2025-05-03 11:04:04,904 INFO    MainThread:4323 [wandb_run.py:_atexit_cleanup():2531] got exitcode: 0
+2025-05-03 11:04:04,905 INFO    MainThread:4323 [wandb_run.py:_restore():2513] restore
+2025-05-03 11:04:04,905 INFO    MainThread:4323 [wandb_run.py:_restore():2519] restore done
+2025-05-03 11:04:11,148 INFO    MainThread:4323 [wandb_run.py:_footer_history_summary_info():4160] rendering history
+2025-05-03 11:04:11,150 INFO    MainThread:4323 [wandb_run.py:_footer_history_summary_info():4192] rendering summary
+2025-05-03 11:04:11,153 INFO    MainThread:4323 [wandb_run.py:_footer_sync_info():4121] logging synced files

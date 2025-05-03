@@ -25,7 +25,7 @@ class PoemDataset(Dataset):
             
         return torch.LongTensor(x), torch.LongTensor(y)
 
-def load_data(file_path='tang.npz', seq_length=64, batch_size=64, val_split=0.1):
+def load_data(file_path='./data/tang.npz', seq_length=64, batch_size=64, val_split=0.1):
     """加载唐诗数据集并创建数据加载器"""
     # 加载数据
     data = np.load(file_path, allow_pickle=True)

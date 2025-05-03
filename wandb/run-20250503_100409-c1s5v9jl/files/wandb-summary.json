@@ -1,0 +1,1 @@
+{"train_loss":4.19369996741966,"example_poem":"湖光秋月两相和<START>四阳春流梦复来，出道长风一通旧。","val_loss":5.755388434727987,"epoch":49,"_wandb":{"runtime":3594},"batch_loss":4.21245813369751,"_timestamp":1.746270244346827e+09,"batch":40490,"_runtime":3594.311113132,"_step":4154}

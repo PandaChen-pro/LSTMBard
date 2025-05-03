@@ -9,7 +9,7 @@ from util import set_seed, format_poem_output
 
 def main():
     parser = argparse.ArgumentParser(description='LSTM 唐诗生成')
-    parser.add_argument('--data_path', type=str, default='tang.npz', help='数据集路径')
+    parser.add_argument('--data_path', type=str, default='./data/tang.npz', help='数据集路径')
     parser.add_argument('--mode', type=str, default='train', choices=['train', 'generate', 'acrostic'], 
                         help='运行模式：训练模型或生成诗句')
     parser.add_argument('--model_path', type=str, default='checkpoints/final_model.pth', 
