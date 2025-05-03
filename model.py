@@ -57,7 +57,9 @@ class PoemLSTM(nn.Module):
         with torch.no_grad():
             for _ in range(max_length):
                 # 准备输入
-                x = torch.tensor(input_seq).unsqueeze(0).to(device)
+                # 限制输入序列长度，防止过长
+                current_input_seq = input_seq[-self.lstm.input_size:] 
+                x = torch.tensor(current_input_seq).unsqueeze(0).to(device)
                 
                 # 前向传播
                 output, hidden = self(x, hidden)
@@ -72,21 +74,23 @@ class PoemLSTM(nn.Module):
                 # 采样下一个字符
                 pred_idx = torch.multinomial(probs, 1).item()
                 
-                # 如果生成了填充标记，尝试重新采样
-                if pred_idx == self.pad_idx:
+                # 如果生成了填充标记或无效索引，尝试重新采样或跳过
+                if pred_idx == self.pad_idx or pred_idx not in ix2word:
                     continue
                 
                 # 添加到结果
-                pred_char = ix2word[str(pred_idx)]
+                pred_char = ix2word[pred_idx] 
                 result += pred_char
                 
                 # 更新输入序列
-                input_seq = input_seq[1:] + [pred_idx]
+                input_seq.append(pred_idx) # 只添加新的索引
                 
                 # 如果生成了特定标点或达到足够长度，可以结束生成
                 if pred_char in ['。', '！', '？'] and len(result) > len(initial_text) + 20:
                     break
-        
+                if len(result) >= len(initial_text) + max_length: # 添加显式最大长度停止条件
+                    break
+
         return result
     
     def generate_acrostic(self, head_chars, word2ix, ix2word, 
@@ -105,15 +109,21 @@ class PoemLSTM(nn.Module):
                     input_seq = [word2ix[head_char]]
                 else:
                     # 如果首字不在词汇表中，选择一个随机字符
-                    random_idx = np.random.randint(1, self.vocab_size - 1)  # 避开填充标记
-                    current_line = ix2word[str(random_idx)]
+                    random_idx = np.random.randint(0, self.vocab_size) # 0 到 vocab_size-1
+                    while random_idx == self.pad_idx or random_idx not in ix2word: # 确保不是pad且有效
+                        random_idx = np.random.randint(0, self.vocab_size)
+                    current_line = ix2word[random_idx] # <--- 修改处
                     input_seq = [random_idx]
+                    print(f"Warning: Head character '{head_char}' not in vocabulary. Using '{current_line}' instead.")
+
                 
                 hidden = None
                 
                 # 生成剩余的字符
                 for j in range(line_length - 1):
-                    x = torch.tensor(input_seq[-min(len(input_seq), 20):]).unsqueeze(0).to(device)
+                    # 限制输入序列长度
+                    current_input_seq = input_seq[-self.lstm.input_size:]
+                    x = torch.tensor(current_input_seq).unsqueeze(0).to(device)
                     output, hidden = self(x, hidden)
                     output = output[:, -1, :] / temperature
                     
@@ -122,24 +132,30 @@ class PoemLSTM(nn.Module):
                     probs = F.softmax(output, dim=-1).squeeze()
                     pred_idx = torch.multinomial(probs, 1).item()
                     
-                    # 如果生成了填充标记，尝试重新采样
-                    if pred_idx == self.pad_idx:
-                        j -= 1  # 重新生成这个位置
-                        continue
+                    # 如果生成了填充标记或无效索引，尝试重新采样
+                    retry_count = 0
+                    while (pred_idx == self.pad_idx or pred_idx not in ix2word) and retry_count < 5:
+                        pred_idx = torch.multinomial(probs, 1).item()
+                        retry_count += 1
                     
-                    pred_char = ix2word[str(pred_idx)]
+                    if pred_idx == self.pad_idx or pred_idx not in ix2word: # 重试后仍无效，跳过本次生成
+                        print("Warning: Could not generate a valid character, skipping.")
+                        continue # 或者 break，取决于希望的行为
+                        
+                    pred_char = ix2word[pred_idx] # <--- 修改处
                     current_line += pred_char
                     input_seq.append(pred_idx)
                 
                 # 添加标点和换行
                 if i < len(head_chars) - 1:
                     if (i + 1) % 2 == 0:
-                        current_line += "。\n"
+                        current_line += "。" # 五绝/七绝 通常是 逗号/句号 交替
                     else:
-                        current_line += "，\n"
+                        current_line += "，"
                 else:
-                    current_line += "。"
+                    current_line += "。" # 最后一句用句号
                 
-                result += current_line
-        
-        return result
+                result += current_line + "\n" # 每句后加换行符
+
+        # 移除最后一个多余的换行符
+        return result.strip()

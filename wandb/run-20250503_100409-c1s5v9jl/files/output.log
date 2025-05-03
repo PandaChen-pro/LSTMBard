@@ -1,0 +1,51 @@
+Epoch 1/50: 100%|███████████████████████████████████████| 810/810 [01:10<00:00, 11.51it/s, loss=6.1]
+Epoch 1/50, Loss: 6.2669, Time: 70.40s
+Validation Loss: 6.0337
+Model saved to checkpoints/best_model.pth
+Model saved to checkpoints/model_epoch_1_loss_6.033694352044.pth
+Epoch 2/50: 100%|██████████████████████████████████████| 810/810 [01:10<00:00, 11.51it/s, loss=5.99]
+Epoch 2/50, Loss: 6.0155, Time: 70.35s
+Validation Loss: 5.9913
+Model saved to checkpoints/best_model.pth
+Model saved to checkpoints/model_epoch_2_loss_5.9912536568111845.pth
+Epoch 3/50: 100%|██████████████████████████████████████| 810/810 [01:09<00:00, 11.70it/s, loss=5.89]
+Epoch 3/50, Loss: 5.9611, Time: 69.22s
+Validation Loss: 5.9596
+Model saved to checkpoints/best_model.pth
+Model saved to checkpoints/model_epoch_3_loss_5.959579065110948.pth
+Epoch 4/50: 100%|██████████████████████████████████████| 810/810 [01:10<00:00, 11.56it/s, loss=5.74]
+Epoch 4/50, Loss: 5.9026, Time: 70.10s
+Validation Loss: 5.9216
+Model saved to checkpoints/best_model.pth
+Model saved to checkpoints/model_epoch_4_loss_5.921592648824056.pth
+Epoch 5/50: 100%|██████████████████████████████████████| 810/810 [01:08<00:00, 11.78it/s, loss=5.71]
+Epoch 5/50, Loss: 5.8351, Time: 68.78s
+Validation Loss: 5.8697
+Model saved to checkpoints/best_model.pth
+Model saved to checkpoints/model_epoch_5_loss_5.869685983657837.pth
+Epoch 6/50: 100%|██████████████████████████████████████| 810/810 [01:07<00:00, 12.03it/s, loss=5.92]
+Epoch 6/50, Loss: 5.7555, Time: 67.33s
+Validation Loss: 5.8033
+Model saved to checkpoints/best_model.pth
+Model saved to checkpoints/model_epoch_6_loss_5.803325679567125.pth
+Epoch 7/50: 100%|███████████████████████████████████████| 810/810 [01:08<00:00, 11.74it/s, loss=5.9]
+Epoch 7/50, Loss: 5.6672, Time: 68.99s
+Validation Loss: 5.7485
+Model saved to checkpoints/best_model.pth
+Model saved to checkpoints/model_epoch_7_loss_5.748510530259874.pth
+Epoch 8/50: 100%|██████████████████████████████████████| 810/810 [01:09<00:00, 11.74it/s, loss=5.52]
+Epoch 8/50, Loss: 5.5827, Time: 69.01s
+Validation Loss: 5.7145
+Model saved to checkpoints/best_model.pth
+Model saved to checkpoints/model_epoch_8_loss_5.714539273579915.pth
+Epoch 9/50: 100%|██████████████████████████████████████| 810/810 [01:08<00:00, 11.76it/s, loss=5.47]
+Epoch 9/50, Loss: 5.5108, Time: 68.85s
+Validation Loss: 5.6726
+Model saved to checkpoints/best_model.pth
+Model saved to checkpoints/model_epoch_9_loss_5.67255466249254.pth
+Epoch 10/50: 100%|█████████████████████████████████████| 810/810 [01:08<00:00, 11.83it/s, loss=5.46]
+Epoch 10/50, Loss: 5.4366, Time: 68.49s
+Validation Loss: 5.6496
+Model saved to checkpoints/best_model.pth
+Model saved to checkpoints/model_epoch_10_loss_5.649562390645345.pth
+Epoch 11/50:  29%|██████████▋                          | 235/810 [00:19<00:48, 11.79it/s, loss=5.26]

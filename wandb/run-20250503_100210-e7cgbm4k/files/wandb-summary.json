@@ -1,0 +1,1 @@
+{"_timestamp":1.7462666064938896e+09,"epoch":0,"batch_loss":6.080904960632324,"_runtime":75.483508015,"train_loss":6.270487035351035,"val_loss":6.036401955286662,"example_poem":"湖光秋月两相和<START>峭知石独直，绕弦丝见狖。拂熳夜交飞，世炭场瀑弦。","_wandb":{"runtime":76},"_step":83,"batch":800}

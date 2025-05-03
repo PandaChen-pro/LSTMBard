@@ -1,0 +1,8 @@
+{"time":"2025-05-03T10:04:10.039731141Z","level":"INFO","msg":"stream: starting","core version":"0.19.10","symlink path":"/home/code/LSTMBard/wandb/run-20250503_100409-c1s5v9jl/logs/debug-core.log"}
+{"time":"2025-05-03T10:04:10.854365216Z","level":"INFO","msg":"created new stream","id":"c1s5v9jl"}
+{"time":"2025-05-03T10:04:10.854443351Z","level":"INFO","msg":"stream: started","id":"c1s5v9jl"}
+{"time":"2025-05-03T10:04:10.854472405Z","level":"INFO","msg":"writer: Do: started","stream_id":"c1s5v9jl"}
+{"time":"2025-05-03T10:04:10.854494857Z","level":"INFO","msg":"sender: started","stream_id":"c1s5v9jl"}
+{"time":"2025-05-03T10:04:10.854603083Z","level":"INFO","msg":"handler: started","stream_id":"c1s5v9jl"}
+{"time":"2025-05-03T10:04:11.271327326Z","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-05-03T10:12:41.890371286Z","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/laccoliths/lstm-poem-generator/c1s5v9jl/file_stream\": dial tcp 35.186.228.49:443: connect: connection timed out"}

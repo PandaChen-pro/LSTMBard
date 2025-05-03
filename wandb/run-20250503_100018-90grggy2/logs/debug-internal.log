@@ -1,0 +1,16 @@
+{"time":"2025-05-03T10:00:18.498572743Z","level":"INFO","msg":"stream: starting","core version":"0.19.10","symlink path":"/home/code/LSTMBard/wandb/run-20250503_100018-90grggy2/logs/debug-core.log"}
+{"time":"2025-05-03T10:00:19.323822261Z","level":"INFO","msg":"created new stream","id":"90grggy2"}
+{"time":"2025-05-03T10:00:19.323912672Z","level":"INFO","msg":"stream: started","id":"90grggy2"}
+{"time":"2025-05-03T10:00:19.32393792Z","level":"INFO","msg":"writer: Do: started","stream_id":"90grggy2"}
+{"time":"2025-05-03T10:00:19.323943331Z","level":"INFO","msg":"handler: started","stream_id":"90grggy2"}
+{"time":"2025-05-03T10:00:19.324052077Z","level":"INFO","msg":"sender: started","stream_id":"90grggy2"}
+{"time":"2025-05-03T10:00:19.709186557Z","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-05-03T10:00:45.88535647Z","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/laccoliths/lstm-poem-generator/90grggy2/file_stream\": EOF"}
+{"time":"2025-05-03T10:01:32.879791503Z","level":"INFO","msg":"stream: closing","id":"90grggy2"}
+{"time":"2025-05-03T10:01:32.879831481Z","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-05-03T10:01:32.879875032Z","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-05-03T10:01:45.221215944Z","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-05-03T10:01:46.025440294Z","level":"INFO","msg":"handler: closed","stream_id":"90grggy2"}
+{"time":"2025-05-03T10:01:46.025499146Z","level":"INFO","msg":"writer: Close: closed","stream_id":"90grggy2"}
+{"time":"2025-05-03T10:01:46.025531992Z","level":"INFO","msg":"sender: closed","stream_id":"90grggy2"}
+{"time":"2025-05-03T10:01:46.025650866Z","level":"INFO","msg":"stream: closed","id":"90grggy2"}
