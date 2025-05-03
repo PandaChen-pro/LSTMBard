@@ -3,21 +3,24 @@ import time
 import torch
 import torch.nn as nn
 import torch.optim as optim
+import numpy as np
 import wandb
 from tqdm import tqdm
 
 class PoemTrainer:
     def __init__(self, model, train_loader, val_loader=None, 
-                 learning_rate=0.001, device='cuda'):
+                learning_rate=0.001, device='cuda', pad_idx=8292):
         self.model = model
         self.train_loader = train_loader
         self.val_loader = val_loader
         self.device = device
-        self.criterion = nn.CrossEntropyLoss()
+        self.pad_idx = pad_idx
+        # 使用交叉熵损失，忽略填充标记
+        self.criterion = nn.CrossEntropyLoss(ignore_index=pad_idx)
         self.optimizer = optim.Adam(model.parameters(), lr=learning_rate)
         
-    def train(self, epochs, char_to_idx, idx_to_char, save_path='checkpoints',
-              log_interval=10, save_interval=1, use_wandb=True):
+    def train(self, epochs, word2ix, ix2word, save_path='checkpoints',
+             log_interval=10, save_interval=1, use_wandb=True):
         """训练模型"""
         if use_wandb:
             wandb.init(project="lstm-poem-generator", config={
@@ -101,8 +104,8 @@ class PoemTrainer:
                 
                 # 生成示例诗句
                 if epoch % log_interval == 0:
-                    example_poem = self.model.generate("湖光秋月两相和", char_to_idx, idx_to_char, 
-                                                      max_length=100, device=self.device)
+                    example_poem = self.model.generate("湖光秋月两相和", word2ix, ix2word, 
+                                                     max_length=100, device=self.device)
                     wandb.log({
                         "example_poem": example_poem,
                         "epoch": epoch

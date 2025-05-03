@@ -24,13 +24,14 @@ def main():
     parser.add_argument('--dropout', type=float, default=0.5, help='Dropout率')
     parser.add_argument('--lr', type=float, default=0.001, help='学习率')
     parser.add_argument('--batch_size', type=int, default=64, help='批大小')
-    parser.add_argument('--seq_length', type=int, default=48, help='序列长度')
+    parser.add_argument('--seq_length', type=int, default=64, help='序列长度')
     parser.add_argument('--epochs', type=int, default=50, help='训练轮数')
     parser.add_argument('--use_wandb', action='store_true', help='是否使用wandb记录')
     parser.add_argument('--device', type=str, default='cuda' if torch.cuda.is_available() else 'cpu', 
                         help='运行设备')
     parser.add_argument('--seed', type=int, default=42, help='随机种子')
     parser.add_argument('--temperature', type=float, default=0.8, help='生成时的温度参数')
+    parser.add_argument('--pad_idx', type=int, default=8292, help='填充标记的索引')
     
     args = parser.parse_args()
     
@@ -38,7 +39,7 @@ def main():
     set_seed(args.seed)
     
     # 加载数据
-    dataloader, char_to_idx, idx_to_char, vocab_size = load_data(
+    train_loader, val_loader, word2ix, ix2word, vocab_size = load_data(
         args.data_path, args.seq_length, args.batch_size)
     
     # 初始化模型
@@ -47,22 +48,25 @@ def main():
         embedding_dim=args.embedding_dim,
         hidden_dim=args.hidden_dim,
         num_layers=args.num_layers,
-        dropout=args.dropout
+        dropout=args.dropout,
+        pad_idx=args.pad_idx
     ).to(args.device)
     
     if args.mode == 'train':
         # 训练模型
         trainer = PoemTrainer(
             model=model,
-            train_loader=dataloader,
+            train_loader=train_loader,
+            val_loader=val_loader,
             learning_rate=args.lr,
-            device=args.device
+            device=args.device,
+            pad_idx=args.pad_idx
         )
         
         trainer.train(
             epochs=args.epochs,
-            char_to_idx=char_to_idx,
-            idx_to_char=idx_to_char,
+            word2ix=word2ix,
+            ix2word=ix2word,
             use_wandb=args.use_wandb
         )
         
@@ -74,8 +78,8 @@ def main():
         # 生成诗句
         generated_poem = model.generate(
             initial_text=args.initial_text,
-            char_to_idx=char_to_idx,
-            idx_to_char=idx_to_char,
+            word2ix=word2ix,
+            ix2word=ix2word,
             max_length=100,
             temperature=args.temperature,
             device=args.device
@@ -92,8 +96,8 @@ def main():
         # 生成藏头诗
         acrostic_poem = model.generate_acrostic(
             head_chars=args.head_chars,
-            char_to_idx=char_to_idx,
-            idx_to_char=idx_to_char,
+            word2ix=word2ix,
+            ix2word=ix2word,
             temperature=args.temperature,
             device=args.device
         )
