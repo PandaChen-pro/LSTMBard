@@ -29,22 +29,19 @@ def main():
     parser.add_argument('--use_wandb', action='store_true', help='是否使用wandb记录')
     parser.add_argument('--device', type=str, default='cuda' if torch.cuda.is_available() else 'cpu', 
                         help='运行设备')
+    parser.add_argument('--resume', type=str, default=None, help='从检查点恢复训练')
     parser.add_argument('--seed', type=int, default=42, help='随机种子')
     parser.add_argument('--temperature', type=float, default=0.8, help='生成时的温度参数')
     parser.add_argument('--pad_idx', type=int, default=8292, help='填充标记的索引')
-    parser.add_argument('--weight_decay', type=float, default=1e-5, help='权重衰减 (L2 正则化)') # 新增
-    parser.add_argument('--patience', type=int, default=5, help='早停法的耐心轮数') # 新增
+    parser.add_argument('--weight_decay', type=float, default=1e-5, help='权重衰减 (L2 正则化)') 
     
     args = parser.parse_args()
     
-    # 设置随机种子
     set_seed(args.seed)
     
-    # 加载数据
     train_loader, val_loader, word2ix, ix2word, vocab_size = load_data(
         args.data_path, args.seq_length, args.batch_size)
     
-    # 初始化模型
     model = PoemLSTM(
         vocab_size=vocab_size,
         embedding_dim=args.embedding_dim,
@@ -55,7 +52,6 @@ def main():
     ).to(args.device)
     
     if args.mode == 'train':
-        # 训练模型
         trainer = PoemTrainer(
             model=model,
             train_loader=train_loader,
@@ -63,22 +59,21 @@ def main():
             learning_rate=args.lr,
             device=args.device,
             pad_idx=args.pad_idx,
-            weight_decay=args.weight_decay
+            weight_decay=args.weight_decay,
         )
         
         trainer.train(
             epochs=args.epochs,
             word2ix=word2ix,
             ix2word=ix2word,
-            use_wandb=args.use_wandb
+            use_wandb=args.use_wandb,
+            resume_path=args.resume,
         )
         
     elif args.mode == 'generate':
-        # 加载预训练模型
         checkpoint = torch.load(args.model_path)
         model.load_state_dict(checkpoint['model_state_dict'])
         
-        # 生成诗句
         generated_poem = model.generate(
             initial_text=args.initial_text,
             word2ix=word2ix,
@@ -92,11 +87,9 @@ def main():
         print(format_poem_output(generated_poem))
         
     elif args.mode == 'acrostic':
-        # 加载预训练模型
         checkpoint = torch.load(args.model_path)
         model.load_state_dict(checkpoint['model_state_dict'])
         
-        # 生成藏头诗
         acrostic_poem = model.generate_acrostic(
             head_chars=args.head_chars,
             word2ix=word2ix,

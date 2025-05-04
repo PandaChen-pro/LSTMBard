@@ -1,0 +1,7 @@
+{"time":"2025-05-04T08:01:20.085337753Z","level":"INFO","msg":"stream: starting","core version":"0.19.10","symlink path":"/home/code/LSTMBard/wandb/run-20250504_080120-m2aq5ibp/logs/debug-core.log"}
+{"time":"2025-05-04T08:01:20.947794522Z","level":"INFO","msg":"created new stream","id":"m2aq5ibp"}
+{"time":"2025-05-04T08:01:20.947889448Z","level":"INFO","msg":"stream: started","id":"m2aq5ibp"}
+{"time":"2025-05-04T08:01:20.947918522Z","level":"INFO","msg":"writer: Do: started","stream_id":"m2aq5ibp"}
+{"time":"2025-05-04T08:01:20.947931418Z","level":"INFO","msg":"handler: started","stream_id":"m2aq5ibp"}
+{"time":"2025-05-04T08:01:20.948039066Z","level":"INFO","msg":"sender: started","stream_id":"m2aq5ibp"}
+{"time":"2025-05-04T08:01:21.435207717Z","level":"INFO","msg":"Starting system monitor"}
