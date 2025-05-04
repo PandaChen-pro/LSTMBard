@@ -23,7 +23,7 @@ def main():
     parser.add_argument('--num_layers', type=int, default=3, help='LSTM层数')
     parser.add_argument('--dropout', type=float, default=0.5, help='Dropout率')
     parser.add_argument('--lr', type=float, default=0.001, help='学习率')
-    parser.add_argument('--batch_size', type=int, default=64, help='批大小')
+    parser.add_argument('--batch_size', type=int, default=128, help='批大小')
     parser.add_argument('--seq_length', type=int, default=64, help='序列长度')
     parser.add_argument('--epochs', type=int, default=50, help='训练轮数')
     parser.add_argument('--use_wandb', action='store_true', help='是否使用wandb记录')
@@ -32,6 +32,8 @@ def main():
     parser.add_argument('--seed', type=int, default=42, help='随机种子')
     parser.add_argument('--temperature', type=float, default=0.8, help='生成时的温度参数')
     parser.add_argument('--pad_idx', type=int, default=8292, help='填充标记的索引')
+    parser.add_argument('--weight_decay', type=float, default=1e-5, help='权重衰减 (L2 正则化)') # 新增
+    parser.add_argument('--patience', type=int, default=5, help='早停法的耐心轮数') # 新增
     
     args = parser.parse_args()
     
@@ -60,7 +62,8 @@ def main():
             val_loader=val_loader,
             learning_rate=args.lr,
             device=args.device,
-            pad_idx=args.pad_idx
+            pad_idx=args.pad_idx,
+            weight_decay=args.weight_decay
         )
         
         trainer.train(

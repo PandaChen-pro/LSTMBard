@@ -6,10 +6,12 @@ import torch.optim as optim
 import numpy as np
 import wandb
 from tqdm import tqdm
+from torch.optim.lr_scheduler import ReduceLROnPlateau
+
 
 class PoemTrainer:
     def __init__(self, model, train_loader, val_loader=None, 
-                learning_rate=0.001, device='cuda', pad_idx=8292):
+                learning_rate=0.001, device='cuda', pad_idx=8292,weight_decay=1e-5):
         self.model = model
         self.train_loader = train_loader
         self.val_loader = val_loader
@@ -17,7 +19,9 @@ class PoemTrainer:
         self.pad_idx = pad_idx
         # 使用交叉熵损失，忽略填充标记
         self.criterion = nn.CrossEntropyLoss(ignore_index=pad_idx)
-        self.optimizer = optim.Adam(model.parameters(), lr=learning_rate)
+        self.optimizer = optim.AdamW(model.parameters(), lr=learning_rate,weight_decay=weight_decay)
+        self.scheduler = ReduceLROnPlateau(self.optimizer, mode='min', factor=0.5, patience=5, verbose=True)
+
         
     def train(self, epochs, word2ix, ix2word, save_path='checkpoints',
              log_interval=10, save_interval=10, use_wandb=True):
@@ -32,14 +36,18 @@ class PoemTrainer:
                 "num_layers": self.model.num_layers,
                 "vocab_size": self.model.vocab_size
             })
+            wandb.watch(self.model, log_freq=100)
+
             
         os.makedirs(save_path, exist_ok=True)
         
-        best_loss = float('inf')
+        best_val_loss = float('inf')
+        
+        epochs_no_improve = 0
         
         for epoch in range(epochs):
             self.model.train()
-            total_loss = 0
+            total_train_loss = 0
             start_time = time.time()
             
             progress_bar = tqdm(self.train_loader, desc=f"Epoch {epoch+1}/{epochs}")
@@ -65,7 +73,7 @@ class PoemTrainer:
                 # 更新参数
                 self.optimizer.step()
                 
-                total_loss += loss.item()
+                total_train_loss += loss.item()
                 progress_bar.set_postfix(loss=loss.item())
                 
                 # 记录到wandb
@@ -75,47 +83,53 @@ class PoemTrainer:
                         "batch": batch_idx + epoch * len(self.train_loader)
                     })
             
-            avg_loss = total_loss / len(self.train_loader)
+            avg_train_loss = total_train_loss / len(self.train_loader)
             elapsed = time.time() - start_time
             
-            print(f"Epoch {epoch+1}/{epochs}, Loss: {avg_loss:.4f}, Time: {elapsed:.2f}s")
+            print(f"Epoch {epoch+1}/{epochs}, Loss: {avg_train_loss:.4f}, Time: {elapsed:.2f}s")
             
+            current_val_loss = float('inf')
+
             # 验证
             if self.val_loader:
-                val_loss = self.evaluate()
-                print(f"Validation Loss: {val_loss:.4f}")
+                current_val_loss = self.evaluate()
+                print(f"Validation Loss: {current_val_loss:.4f}")
                 if use_wandb:
                     wandb.log({
-                        "val_loss": val_loss,
-                        "epoch": epoch
+                        "val_loss": current_val_loss,
+                        "train_loss": avg_train_loss,
+                        "epoch": epoch,
+                        "learning_rate": self.optimizer.param_groups[0]['lr']
                     })
                     
-                # 如果是最佳模型，保存它
-                if val_loss < best_loss:
-                    best_loss = val_loss
-                    self.save_model(os.path.join(save_path, 'best_model.pth'))
-            
-            # 记录到wandb
-            if use_wandb:
-                wandb.log({
-                    "train_loss": avg_loss,
-                    "epoch": epoch
-                })
-                
-                # 生成示例诗句
-                if epoch % log_interval == 0:
-                    example_poem = self.model.generate("湖光秋月两相和", word2ix, ix2word, 
-                                                     max_length=100, device=self.device)
-                    wandb.log({
-                        "example_poem": example_poem,
-                        "epoch": epoch
-                    })
-            
-            # os.mkdir(os.path.join(save_path, 'model'), exist_ok=True)
-            # 定期保存模型
-            # 每隔10个epoch保存一次
-            if (epoch + 1) % save_interval == 0:
-                self.save_model(os.path.join(save_path, f'model_epoch_{epoch+1}_loss_{val_loss}.pth'))
+                if current_val_loss < best_val_loss:
+                        best_val_loss = current_val_loss
+                        self.save_model(os.path.join(save_path, 'best_model.pth'))
+                        epochs_no_improve = 0 # 重置计数器
+                        print(f"Validation loss improved. Saved best model.")
+                else:
+                    epochs_no_improve += 1
+                    print(f"Validation loss did not improve for {epochs_no_improve} epoch(s).")
+
+                # if epochs_no_improve >= patience:
+                #     print(f"Early stopping triggered after {epoch + 1} epochs.")
+                #     break # 停止训练
+
+                self.scheduler.step(current_val_loss)
+
+            else: # 如果没有验证集，按间隔保存
+                if (epoch + 1) % save_interval == 0:
+                    self.save_model(os.path.join(save_path, f'model_epoch_{epoch+1}.pth'))
+
+
+            # 生成示例诗句 (可以在验证后进行)
+            if use_wandb and epoch % log_interval == 0:
+                 try: # 添加 try-except 以防生成失败
+                    example_poem = self.model.generate("湖光秋月两相和", word2ix, ix2word,
+                                                    max_length=60, device=self.device, temperature=0.8) # 降低一点温度和长度
+                    wandb.log({"example_poem": wandb.Html(f"<pre>{example_poem}</pre>"), "epoch": epoch}) # 使用 pre 标签保持格式
+                 except Exception as e:
+                    print(f"Error generating example poem: {e}")
         
         # 保存最终模型
         self.save_model(os.path.join(save_path, 'final_model.pth'))

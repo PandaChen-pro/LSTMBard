@@ -15,9 +15,10 @@ class PoemLSTM(nn.Module):
         
         # 定义嵌入层和LSTM层
         self.embedding = nn.Embedding(vocab_size, embedding_dim, padding_idx=pad_idx)
+        self.embedding_dropout = nn.Dropout(dropout)
         self.lstm = nn.LSTM(embedding_dim, hidden_dim, num_layers, 
                            batch_first=True, dropout=dropout)
-        self.dropout = nn.Dropout(dropout)
+        self.output_dropout = nn.Dropout(dropout)
         self.fc = nn.Linear(hidden_dim, vocab_size)
         
     def forward(self, x, hidden=None):
@@ -30,10 +31,11 @@ class PoemLSTM(nn.Module):
             
         # 嵌入和LSTM前向传播
         embeds = self.embedding(x)  # [batch_size, seq_length, embedding_dim]
+        embeds = self.embedding_dropout(embeds)  # [batch_size, seq_length, embedding_dim]  
         lstm_out, hidden = self.lstm(embeds, hidden)  # [batch_size, seq_length, hidden_dim]
         
         # 全连接层输出
-        output = self.dropout(lstm_out)
+        output = self.output_dropout(lstm_out)
         output = self.fc(output)  # [batch_size, seq_length, vocab_size]
         
         return output, hidden

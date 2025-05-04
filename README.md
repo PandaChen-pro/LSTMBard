@@ -2,7 +2,7 @@
 ## 使用方法
 训练模型：
 ```shell
-python start.py --mode train --data_path ./data/tang.npz --use_wandb --seed 3407 
+python start.py --mode train --data_path ./data/tang.npz --use_wandb --seed 3407  --dropout 0.55
 ```
 生成诗句（给定首句）：
 ```shell

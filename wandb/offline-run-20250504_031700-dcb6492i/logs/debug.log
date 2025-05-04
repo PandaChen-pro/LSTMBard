@@ -1,0 +1,24 @@
+2025-05-04 03:17:00,560 INFO    MainThread:79911 [wandb_setup.py:_flush():68] Current SDK version is 0.19.10
+2025-05-04 03:17:00,560 INFO    MainThread:79911 [wandb_setup.py:_flush():68] Configure stats pid to 79911
+2025-05-04 03:17:00,560 INFO    MainThread:79911 [wandb_setup.py:_flush():68] Loading settings from /root/.config/wandb/settings
+2025-05-04 03:17:00,560 INFO    MainThread:79911 [wandb_setup.py:_flush():68] Loading settings from /home/code/LSTMBard/wandb/settings
+2025-05-04 03:17:00,560 INFO    MainThread:79911 [wandb_setup.py:_flush():68] Loading settings from environment variables
+2025-05-04 03:17:00,560 INFO    MainThread:79911 [wandb_init.py:setup_run_log_directory():724] Logging user logs to /home/code/LSTMBard/wandb/offline-run-20250504_031700-dcb6492i/logs/debug.log
+2025-05-04 03:17:00,560 INFO    MainThread:79911 [wandb_init.py:setup_run_log_directory():725] Logging internal logs to /home/code/LSTMBard/wandb/offline-run-20250504_031700-dcb6492i/logs/debug-internal.log
+2025-05-04 03:17:00,561 INFO    MainThread:79911 [wandb_init.py:init():852] calling init triggers
+2025-05-04 03:17:00,561 INFO    MainThread:79911 [wandb_init.py:init():857] wandb.init called with sweep_config: {}
+config: {'learning_rate': 0.001, 'epochs': 50, 'model_type': 'PoemLSTM', 'embedding_dim': 256, 'hidden_dim': 512, 'num_layers': 3, 'vocab_size': 8293, '_wandb': {}}
+2025-05-04 03:17:00,561 INFO    MainThread:79911 [wandb_init.py:init():893] starting backend
+2025-05-04 03:17:00,823 INFO    MainThread:79911 [wandb_init.py:init():897] sending inform_init request
+2025-05-04 03:17:00,854 INFO    MainThread:79911 [backend.py:_multiprocessing_setup():101] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2025-05-04 03:17:00,854 INFO    MainThread:79911 [wandb_init.py:init():907] backend started and connected
+2025-05-04 03:17:00,857 INFO    MainThread:79911 [wandb_init.py:init():1002] updated telemetry
+2025-05-04 03:17:00,943 INFO    MainThread:79911 [wandb_init.py:init():1026] communicating run to backend with 90.0 second timeout
+2025-05-04 03:17:00,984 INFO    MainThread:79911 [wandb_init.py:init():1101] starting run threads in backend
+2025-05-04 03:17:01,102 INFO    MainThread:79911 [wandb_run.py:_console_start():2566] atexit reg
+2025-05-04 03:17:01,103 INFO    MainThread:79911 [wandb_run.py:_redirect():2414] redirect: wrap_raw
+2025-05-04 03:17:01,103 INFO    MainThread:79911 [wandb_run.py:_redirect():2483] Wrapping output streams.
+2025-05-04 03:17:01,103 INFO    MainThread:79911 [wandb_run.py:_redirect():2506] Redirects installed.
+2025-05-04 03:17:01,104 INFO    MainThread:79911 [wandb_init.py:init():1147] run started, returning control to user process
+2025-05-04 03:17:01,105 INFO    MainThread:79911 [wandb_watch.py:_watch():71] Watching
+2025-05-04 03:17:01,992 INFO    MsgRouterThr:79911 [mailbox.py:close():129] [no run ID] Closing mailbox, abandoning 0 handles.

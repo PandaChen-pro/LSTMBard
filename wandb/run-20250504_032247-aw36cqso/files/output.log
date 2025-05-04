@@ -1,0 +1,6 @@
+Epoch 1/50: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████| 405/405 [00:55<00:00,  7.32it/s, loss=6.17]
+Epoch 1/50, Loss: 6.3957, Time: 55.33s
+Validation Loss: 6.0737
+Model saved to checkpoints/best_model.pth
+Validation loss improved. Saved best model.
+Epoch 2/50:   2%|██▍                                                                                                             | 9/405 [00:01<00:53,  7.34it/s, loss=6.05]
