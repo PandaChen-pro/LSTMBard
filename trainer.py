@@ -148,8 +148,7 @@ class PoemTrainer:
                 try: # 添加 try-except 以防生成失败
                     example_poem = self.model.generate("湖光秋月两相和", word2ix, ix2word,
                                                     max_length=60, device=self.device, temperature=0.8) # 降低一点温度和长度
-                    wandb.log({"example_poem": wandb.Html(f"<pre>{example_poem}</pre>"), "epoch": epoch}) # 使用 pre 标签保持格式
-                    # 保存生成的诗句到文件
+                    wandb.log({"example_poem": wandb.Html(f"<pre>{example_poem.encode('utf-8').decode('utf-8')}</pre>"), "epoch": epoch}) # 使用 pre 标签保持格式
                     os.makedirs(os.path.join(save_path, 'poems'), exist_ok=True)
                     # 使用 epoch+1 作为文件名
                     with open(os.path.join(save_path, f'./poems/example_poem_epoch_{epoch+1}.txt'), 'w', encoding='utf-8') as f:
