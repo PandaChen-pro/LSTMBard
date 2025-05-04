@@ -1,1 +1,368 @@
-Epoch 1/80:   4%|█▋                                     | 18/405 [00:02<00:53,  7.28it/s, loss=7.02]
+Epoch 1/80: 100%|██████████████████████████████████████| 405/405 [00:56<00:00,  7.23it/s, loss=6.15]
+Epoch 1/80, Loss: 6.3855, Time: 56.04s
+Validation Loss: 6.0650
+Model saved to checkpoints/best_model.pth
+Validation loss improved. Saved best model.
+Epoch 2/80: 100%|██████████████████████████████████████| 405/405 [00:55<00:00,  7.27it/s, loss=6.01]
+Epoch 2/80, Loss: 6.0439, Time: 55.73s
+Validation Loss: 6.0050
+Model saved to checkpoints/best_model.pth
+Validation loss improved. Saved best model.
+Epoch 3/80: 100%|██████████████████████████████████████| 405/405 [00:55<00:00,  7.33it/s, loss=6.01]
+Epoch 3/80, Loss: 5.9916, Time: 55.23s
+Validation Loss: 5.9850
+Model saved to checkpoints/best_model.pth
+Validation loss improved. Saved best model.
+Epoch 4/80: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████| 405/405 [00:55<00:00,  7.30it/s, loss=5.8]
+Epoch 4/80, Loss: 5.9605, Time: 55.45s
+Validation Loss: 5.9756
+Model saved to checkpoints/best_model.pth
+Validation loss improved. Saved best model.
+Epoch 5/80: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████| 405/405 [00:55<00:00,  7.28it/s, loss=5.92]
+Epoch 5/80, Loss: 5.9375, Time: 55.64s
+Validation Loss: 5.9780
+Validation loss did not improve for 1 epoch(s).
+Epoch 6/80: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████| 405/405 [00:54<00:00,  7.48it/s, loss=6.09]
+Epoch 6/80, Loss: 5.9147, Time: 54.14s
+Validation Loss: 5.9669
+Model saved to checkpoints/best_model.pth
+Validation loss improved. Saved best model.
+Epoch 7/80: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████| 405/405 [00:54<00:00,  7.43it/s, loss=6.08]
+Epoch 7/80, Loss: 5.8900, Time: 54.53s
+Validation Loss: 5.9582
+Model saved to checkpoints/best_model.pth
+Validation loss improved. Saved best model.
+Epoch 8/80: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████| 405/405 [00:55<00:00,  7.28it/s, loss=5.68]
+Epoch 8/80, Loss: 5.8591, Time: 55.64s
+Validation Loss: 5.9409
+Model saved to checkpoints/best_model.pth
+Validation loss improved. Saved best model.
+Epoch 9/80: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████| 405/405 [00:55<00:00,  7.30it/s, loss=5.84]
+Epoch 9/80, Loss: 5.8245, Time: 55.51s
+Validation Loss: 5.9112
+Model saved to checkpoints/best_model.pth
+Validation loss improved. Saved best model.
+Epoch 10/80: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████| 405/405 [00:55<00:00,  7.29it/s, loss=5.84]
+Epoch 10/80, Loss: 5.7815, Time: 55.54s
+Validation Loss: 5.8825
+Model saved to checkpoints/best_model.pth
+Validation loss improved. Saved best model.
+Epoch 11/80: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████| 405/405 [00:55<00:00,  7.31it/s, loss=5.89]
+Epoch 11/80, Loss: 5.7461, Time: 55.41s
+Validation Loss: 5.8603
+Model saved to checkpoints/best_model.pth
+Validation loss improved. Saved best model.
+Epoch 12/80: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████| 405/405 [00:55<00:00,  7.30it/s, loss=5.7]
+Epoch 12/80, Loss: 5.7126, Time: 55.45s
+Validation Loss: 5.8476
+Model saved to checkpoints/best_model.pth
+Validation loss improved. Saved best model.
+Epoch 13/80: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████| 405/405 [00:55<00:00,  7.31it/s, loss=5.66]
+Epoch 13/80, Loss: 5.6828, Time: 55.44s
+Validation Loss: 5.8279
+Model saved to checkpoints/best_model.pth
+Validation loss improved. Saved best model.
+Epoch 14/80: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████| 405/405 [00:55<00:00,  7.28it/s, loss=5.57]
+Epoch 14/80, Loss: 5.6473, Time: 55.67s
+Validation Loss: 5.8158
+Model saved to checkpoints/best_model.pth
+Validation loss improved. Saved best model.
+Epoch 15/80: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████| 405/405 [00:55<00:00,  7.29it/s, loss=5.52]
+Epoch 15/80, Loss: 5.6171, Time: 55.56s
+Validation Loss: 5.8027
+Model saved to checkpoints/best_model.pth
+Validation loss improved. Saved best model.
+Epoch 16/80: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████| 405/405 [00:55<00:00,  7.31it/s, loss=5.66]
+Epoch 16/80, Loss: 5.5867, Time: 55.39s
+Validation Loss: 5.7909
+Model saved to checkpoints/best_model.pth
+Validation loss improved. Saved best model.
+Epoch 17/80: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████| 405/405 [00:55<00:00,  7.28it/s, loss=5.66]
+Epoch 17/80, Loss: 5.5573, Time: 55.60s
+Validation Loss: 5.7741
+Model saved to checkpoints/best_model.pth
+Validation loss improved. Saved best model.
+Epoch 18/80: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████| 405/405 [00:55<00:00,  7.28it/s, loss=5.6]
+Epoch 18/80, Loss: 5.5275, Time: 55.63s
+Validation Loss: 5.7698
+Model saved to checkpoints/best_model.pth
+Validation loss improved. Saved best model.
+Epoch 19/80: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████| 405/405 [00:55<00:00,  7.28it/s, loss=5.72]
+Epoch 19/80, Loss: 5.4996, Time: 55.61s
+Validation Loss: 5.7523
+Model saved to checkpoints/best_model.pth
+Validation loss improved. Saved best model.
+Epoch 20/80: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████| 405/405 [00:55<00:00,  7.27it/s, loss=5.49]
+Epoch 20/80, Loss: 5.4717, Time: 55.71s
+Validation Loss: 5.7409
+Model saved to checkpoints/best_model.pth
+Validation loss improved. Saved best model.
+Epoch 21/80: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████| 405/405 [00:55<00:00,  7.28it/s, loss=5.43]
+Epoch 21/80, Loss: 5.4452, Time: 55.61s
+Validation Loss: 5.7300
+Model saved to checkpoints/best_model.pth
+Validation loss improved. Saved best model.
+Epoch 22/80: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████| 405/405 [00:55<00:00,  7.29it/s, loss=5.47]
+Epoch 22/80, Loss: 5.4243, Time: 55.58s
+Validation Loss: 5.7312
+Validation loss did not improve for 1 epoch(s).
+Epoch 23/80: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████| 405/405 [00:55<00:00,  7.28it/s, loss=5.38]
+Epoch 23/80, Loss: 5.4044, Time: 55.61s
+Validation Loss: 5.7141
+Model saved to checkpoints/best_model.pth
+Validation loss improved. Saved best model.
+Epoch 24/80: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████| 405/405 [00:55<00:00,  7.30it/s, loss=5.29]
+Epoch 24/80, Loss: 5.3741, Time: 55.51s
+Validation Loss: 5.7053
+Model saved to checkpoints/best_model.pth
+Validation loss improved. Saved best model.
+Epoch 25/80: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████| 405/405 [00:55<00:00,  7.30it/s, loss=5.27]
+Epoch 25/80, Loss: 5.3510, Time: 55.45s
+Validation Loss: 5.6987
+Model saved to checkpoints/best_model.pth
+Validation loss improved. Saved best model.
+Epoch 26/80: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████| 405/405 [00:55<00:00,  7.28it/s, loss=5.33]
+Epoch 26/80, Loss: 5.3263, Time: 55.62s
+Validation Loss: 5.6935
+Model saved to checkpoints/best_model.pth
+Validation loss improved. Saved best model.
+Epoch 27/80: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████| 405/405 [00:55<00:00,  7.30it/s, loss=5.44]
+Epoch 27/80, Loss: 5.3033, Time: 55.51s
+Validation Loss: 5.6885
+Model saved to checkpoints/best_model.pth
+Validation loss improved. Saved best model.
+Epoch 28/80: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████| 405/405 [00:55<00:00,  7.29it/s, loss=5.25]
+Epoch 28/80, Loss: 5.2773, Time: 55.59s
+Validation Loss: 5.6776
+Model saved to checkpoints/best_model.pth
+Validation loss improved. Saved best model.
+Epoch 29/80: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████| 405/405 [00:55<00:00,  7.29it/s, loss=5.29]
+Epoch 29/80, Loss: 5.2617, Time: 55.55s
+Validation Loss: 5.6701
+Model saved to checkpoints/best_model.pth
+Validation loss improved. Saved best model.
+Epoch 30/80: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████| 405/405 [00:55<00:00,  7.29it/s, loss=5.19]
+Epoch 30/80, Loss: 5.2367, Time: 55.55s
+Validation Loss: 5.6691
+Model saved to checkpoints/best_model.pth
+Validation loss improved. Saved best model.
+Epoch 31/80: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████| 405/405 [00:55<00:00,  7.28it/s, loss=5.13]
+Epoch 31/80, Loss: 5.2161, Time: 55.62s
+Validation Loss: 5.6638
+Model saved to checkpoints/best_model.pth
+Validation loss improved. Saved best model.
+Epoch 32/80: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████| 405/405 [00:55<00:00,  7.30it/s, loss=5.25]
+Epoch 32/80, Loss: 5.1996, Time: 55.51s
+Validation Loss: 5.6556
+Model saved to checkpoints/best_model.pth
+Validation loss improved. Saved best model.
+Epoch 33/80: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████| 405/405 [00:55<00:00,  7.29it/s, loss=5.23]
+Epoch 33/80, Loss: 5.1797, Time: 55.54s
+Validation Loss: 5.6534
+Model saved to checkpoints/best_model.pth
+Validation loss improved. Saved best model.
+Epoch 34/80: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████| 405/405 [00:55<00:00,  7.29it/s, loss=5.16]
+Epoch 34/80, Loss: 5.1601, Time: 55.59s
+Validation Loss: 5.6485
+Model saved to checkpoints/best_model.pth
+Validation loss improved. Saved best model.
+Epoch 35/80: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████| 405/405 [00:55<00:00,  7.30it/s, loss=5.2]
+Epoch 35/80, Loss: 5.1420, Time: 55.49s
+Validation Loss: 5.6427
+Model saved to checkpoints/best_model.pth
+Validation loss improved. Saved best model.
+Epoch 36/80: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████| 405/405 [00:55<00:00,  7.29it/s, loss=5.26]
+Epoch 36/80, Loss: 5.1248, Time: 55.56s
+Validation Loss: 5.6397
+Model saved to checkpoints/best_model.pth
+Validation loss improved. Saved best model.
+Epoch 37/80: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████| 405/405 [00:55<00:00,  7.29it/s, loss=5.29]
+Epoch 37/80, Loss: 5.1063, Time: 55.56s
+Validation Loss: 5.6332
+Model saved to checkpoints/best_model.pth
+Validation loss improved. Saved best model.
+Epoch 38/80: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████| 405/405 [00:55<00:00,  7.30it/s, loss=5.16]
+Epoch 38/80, Loss: 5.0917, Time: 55.50s
+Validation Loss: 5.6336
+Validation loss did not improve for 1 epoch(s).
+Epoch 39/80: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████| 405/405 [00:55<00:00,  7.36it/s, loss=5.2]
+Epoch 39/80, Loss: 5.0747, Time: 55.00s
+Validation Loss: 5.6318
+Model saved to checkpoints/best_model.pth
+Validation loss improved. Saved best model.
+Epoch 40/80: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████| 405/405 [00:55<00:00,  7.29it/s, loss=4.95]
+Epoch 40/80, Loss: 5.0593, Time: 55.54s
+Validation Loss: 5.6324
+Validation loss did not improve for 1 epoch(s).
+Epoch 41/80: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████| 405/405 [00:55<00:00,  7.31it/s, loss=4.98]
+Epoch 41/80, Loss: 5.0455, Time: 55.39s
+Validation Loss: 5.6315
+Model saved to checkpoints/best_model.pth
+Validation loss improved. Saved best model.
+Epoch 42/80: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████| 405/405 [00:55<00:00,  7.30it/s, loss=4.99]
+Epoch 42/80, Loss: 5.0278, Time: 55.51s
+Validation Loss: 5.6302
+Model saved to checkpoints/best_model.pth
+Validation loss improved. Saved best model.
+Epoch 43/80: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████| 405/405 [00:55<00:00,  7.30it/s, loss=4.99]
+Epoch 43/80, Loss: 5.0169, Time: 55.50s
+Validation Loss: 5.6288
+Model saved to checkpoints/best_model.pth
+Validation loss improved. Saved best model.
+Epoch 44/80: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████| 405/405 [00:55<00:00,  7.30it/s, loss=5.07]
+Epoch 44/80, Loss: 5.0053, Time: 55.50s
+Validation Loss: 5.6228
+Model saved to checkpoints/best_model.pth
+Validation loss improved. Saved best model.
+Epoch 45/80: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████| 405/405 [00:55<00:00,  7.29it/s, loss=5.04]
+Epoch 45/80, Loss: 4.9904, Time: 55.57s
+Validation Loss: 5.6217
+Model saved to checkpoints/best_model.pth
+Validation loss improved. Saved best model.
+Epoch 46/80: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████| 405/405 [00:55<00:00,  7.32it/s, loss=4.99]
+Epoch 46/80, Loss: 4.9788, Time: 55.31s
+Validation Loss: 5.6223
+Validation loss did not improve for 1 epoch(s).
+Epoch 47/80: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████| 405/405 [00:55<00:00,  7.35it/s, loss=4.98]
+Epoch 47/80, Loss: 4.9659, Time: 55.08s
+Validation Loss: 5.6213
+Model saved to checkpoints/best_model.pth
+Validation loss improved. Saved best model.
+Epoch 48/80: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████| 405/405 [00:55<00:00,  7.29it/s, loss=4.88]
+Epoch 48/80, Loss: 4.9545, Time: 55.52s
+Validation Loss: 5.6207
+Model saved to checkpoints/best_model.pth
+Validation loss improved. Saved best model.
+Epoch 49/80: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████| 405/405 [00:55<00:00,  7.29it/s, loss=4.88]
+Epoch 49/80, Loss: 4.9434, Time: 55.59s
+Validation Loss: 5.6229
+Validation loss did not improve for 1 epoch(s).
+Epoch 50/80: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████| 405/405 [00:55<00:00,  7.29it/s, loss=4.82]
+Epoch 50/80, Loss: 4.9333, Time: 55.54s
+Validation Loss: 5.6205
+Model saved to checkpoints/best_model.pth
+Validation loss improved. Saved best model.
+Epoch 51/80: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████| 405/405 [00:55<00:00,  7.30it/s, loss=4.89]
+Epoch 51/80, Loss: 4.9228, Time: 55.46s
+Validation Loss: 5.6205
+Validation loss did not improve for 1 epoch(s).
+Epoch 52/80: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████| 405/405 [00:55<00:00,  7.30it/s, loss=5.05]
+Epoch 52/80, Loss: 4.9152, Time: 55.47s
+Validation Loss: 5.6211
+Validation loss did not improve for 2 epoch(s).
+Epoch 53/80: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████| 405/405 [00:55<00:00,  7.28it/s, loss=4.92]
+Epoch 53/80, Loss: 4.9074, Time: 55.62s
+Validation Loss: 5.6177
+Model saved to checkpoints/best_model.pth
+Validation loss improved. Saved best model.
+Epoch 54/80: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████| 405/405 [00:55<00:00,  7.31it/s, loss=4.87]
+Epoch 54/80, Loss: 4.8982, Time: 55.43s
+Validation Loss: 5.6166
+Model saved to checkpoints/best_model.pth
+Validation loss improved. Saved best model.
+Epoch 55/80: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████| 405/405 [00:55<00:00,  7.29it/s, loss=4.97]
+Epoch 55/80, Loss: 4.8883, Time: 55.56s
+Validation Loss: 5.6154
+Model saved to checkpoints/best_model.pth
+Validation loss improved. Saved best model.
+Epoch 56/80: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████| 405/405 [00:55<00:00,  7.28it/s, loss=4.9]
+Epoch 56/80, Loss: 4.8799, Time: 55.64s
+Validation Loss: 5.6184
+Validation loss did not improve for 1 epoch(s).
+Epoch 57/80: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████| 405/405 [00:55<00:00,  7.29it/s, loss=4.95]
+Epoch 57/80, Loss: 4.8752, Time: 55.56s
+Validation Loss: 5.6159
+Validation loss did not improve for 2 epoch(s).
+Epoch 58/80: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████| 405/405 [00:55<00:00,  7.28it/s, loss=4.9]
+Epoch 58/80, Loss: 4.8684, Time: 55.62s
+Validation Loss: 5.6185
+Validation loss did not improve for 3 epoch(s).
+Epoch 59/80: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████| 405/405 [00:55<00:00,  7.28it/s, loss=5.02]
+Epoch 59/80, Loss: 4.8612, Time: 55.63s
+Validation Loss: 5.6190
+Validation loss did not improve for 4 epoch(s).
+Epoch 60/80: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████| 405/405 [00:56<00:00,  7.21it/s, loss=4.81]
+Epoch 60/80, Loss: 4.8539, Time: 56.21s
+Validation Loss: 5.6172
+Validation loss did not improve for 5 epoch(s).
+Epoch 61/80: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████| 405/405 [00:55<00:00,  7.30it/s, loss=4.89]
+Epoch 61/80, Loss: 4.8497, Time: 55.47s
+Validation Loss: 5.6198
+Validation loss did not improve for 6 epoch(s).
+Epoch 62/80: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████| 405/405 [00:55<00:00,  7.31it/s, loss=4.91]
+Epoch 62/80, Loss: 4.8442, Time: 55.41s
+Validation Loss: 5.6181
+Validation loss did not improve for 7 epoch(s).
+Epoch 63/80: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████| 405/405 [00:55<00:00,  7.30it/s, loss=4.74]
+Epoch 63/80, Loss: 4.8417, Time: 55.46s
+Validation Loss: 5.6185
+Validation loss did not improve for 8 epoch(s).
+Epoch 64/80: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████| 405/405 [00:55<00:00,  7.29it/s, loss=4.72]
+Epoch 64/80, Loss: 4.8355, Time: 55.55s
+Validation Loss: 5.6180
+Validation loss did not improve for 9 epoch(s).
+Epoch 65/80: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████| 405/405 [00:55<00:00,  7.31it/s, loss=4.83]
+Epoch 65/80, Loss: 4.8311, Time: 55.38s
+Validation Loss: 5.6177
+Validation loss did not improve for 10 epoch(s).
+Epoch 66/80: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████| 405/405 [00:55<00:00,  7.32it/s, loss=4.92]
+Epoch 66/80, Loss: 4.8279, Time: 55.32s
+Validation Loss: 5.6184
+Validation loss did not improve for 11 epoch(s).
+Epoch 67/80: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████| 405/405 [00:55<00:00,  7.31it/s, loss=4.77]
+Epoch 67/80, Loss: 4.8249, Time: 55.43s
+Validation Loss: 5.6186
+Validation loss did not improve for 12 epoch(s).
+Epoch 68/80: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████| 405/405 [00:55<00:00,  7.31it/s, loss=4.77]
+Epoch 68/80, Loss: 4.8221, Time: 55.39s
+Validation Loss: 5.6182
+Validation loss did not improve for 13 epoch(s).
+Epoch 69/80: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████| 405/405 [00:55<00:00,  7.31it/s, loss=4.56]
+Epoch 69/80, Loss: 4.8181, Time: 55.41s
+Validation Loss: 5.6189
+Validation loss did not improve for 14 epoch(s).
+Epoch 70/80: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████| 405/405 [00:55<00:00,  7.31it/s, loss=4.79]
+Epoch 70/80, Loss: 4.8167, Time: 55.37s
+Validation Loss: 5.6180
+Validation loss did not improve for 15 epoch(s).
+Epoch 71/80: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████| 405/405 [00:55<00:00,  7.30it/s, loss=4.79]
+Epoch 71/80, Loss: 4.8132, Time: 55.47s
+Validation Loss: 5.6187
+Validation loss did not improve for 16 epoch(s).
+Epoch 72/80: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████| 405/405 [00:55<00:00,  7.29it/s, loss=4.97]
+Epoch 72/80, Loss: 4.8120, Time: 55.52s
+Validation Loss: 5.6193
+Validation loss did not improve for 17 epoch(s).
+Epoch 73/80: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████| 405/405 [00:55<00:00,  7.30it/s, loss=4.78]
+Epoch 73/80, Loss: 4.8072, Time: 55.44s
+Validation Loss: 5.6195
+Validation loss did not improve for 18 epoch(s).
+Epoch 74/80: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████| 405/405 [00:55<00:00,  7.30it/s, loss=4.81]
+Epoch 74/80, Loss: 4.8095, Time: 55.47s
+Validation Loss: 5.6192
+Validation loss did not improve for 19 epoch(s).
+Epoch 75/80: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████| 405/405 [00:55<00:00,  7.30it/s, loss=4.69]
+Epoch 75/80, Loss: 4.8078, Time: 55.50s
+Validation Loss: 5.6185
+Validation loss did not improve for 20 epoch(s).
+Epoch 76/80: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████| 405/405 [00:55<00:00,  7.29it/s, loss=4.7]
+Epoch 76/80, Loss: 4.8035, Time: 55.54s
+Validation Loss: 5.6186
+Validation loss did not improve for 21 epoch(s).
+Epoch 77/80: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████| 405/405 [00:55<00:00,  7.31it/s, loss=4.84]
+Epoch 77/80, Loss: 4.8075, Time: 55.44s
+Validation Loss: 5.6187
+Validation loss did not improve for 22 epoch(s).
+Epoch 78/80: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████| 405/405 [00:55<00:00,  7.30it/s, loss=4.87]
+Epoch 78/80, Loss: 4.8043, Time: 55.50s
+Validation Loss: 5.6190
+Validation loss did not improve for 23 epoch(s).
+Epoch 79/80: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████| 405/405 [00:55<00:00,  7.30it/s, loss=4.76]
+Epoch 79/80, Loss: 4.8052, Time: 55.48s
+Validation Loss: 5.6191
+Validation loss did not improve for 24 epoch(s).
+Epoch 80/80: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████| 405/405 [00:55<00:00,  7.30it/s, loss=4.66]
+Epoch 80/80, Loss: 4.8060, Time: 55.51s
+Validation Loss: 5.6190
+Validation loss did not improve for 25 epoch(s).
+Model saved to checkpoints/final_model.pth

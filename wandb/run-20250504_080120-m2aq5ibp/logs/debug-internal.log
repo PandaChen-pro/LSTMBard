@@ -5,3 +5,18 @@
 {"time":"2025-05-04T08:01:20.947931418Z","level":"INFO","msg":"handler: started","stream_id":"m2aq5ibp"}
 {"time":"2025-05-04T08:01:20.948039066Z","level":"INFO","msg":"sender: started","stream_id":"m2aq5ibp"}
 {"time":"2025-05-04T08:01:21.435207717Z","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-05-04T08:01:40.599300578Z","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/laccoliths/lstm-bard/m2aq5ibp/file_stream\": EOF"}
+{"time":"2025-05-04T08:02:55.607428102Z","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/laccoliths/lstm-bard/m2aq5ibp/file_stream\": EOF"}
+{"time":"2025-05-04T08:03:10.608353529Z","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/laccoliths/lstm-bard/m2aq5ibp/file_stream\": EOF"}
+{"time":"2025-05-04T08:03:55.619150886Z","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/laccoliths/lstm-bard/m2aq5ibp/file_stream\": EOF"}
+{"time":"2025-05-04T08:04:01.206097522Z","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/laccoliths/lstm-bard/m2aq5ibp/file_stream\": EOF"}
+{"time":"2025-05-04T08:04:55.612150022Z","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/laccoliths/lstm-bard/m2aq5ibp/file_stream\": EOF"}
+{"time":"2025-05-04T09:18:51.94935604Z","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-05-04T09:18:51.949435342Z","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-05-04T09:18:52.915054762Z","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading history steps 3437-3447, console lines 363-367","runtime_seconds":0.621840462},{"desc":"updating run config","runtime_seconds":0.183407482}],"total_operations":2}}
+{"time":"2025-05-04T09:18:55.001538177Z","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-05-04T09:18:55.989500228Z","level":"INFO","msg":"stream: closing","id":"m2aq5ibp"}
+{"time":"2025-05-04T09:18:55.989534183Z","level":"INFO","msg":"handler: closed","stream_id":"m2aq5ibp"}
+{"time":"2025-05-04T09:18:55.989552615Z","level":"INFO","msg":"writer: Close: closed","stream_id":"m2aq5ibp"}
+{"time":"2025-05-04T09:18:55.989617101Z","level":"INFO","msg":"sender: closed","stream_id":"m2aq5ibp"}
+{"time":"2025-05-04T09:18:55.989680009Z","level":"INFO","msg":"stream: closed","id":"m2aq5ibp"}
